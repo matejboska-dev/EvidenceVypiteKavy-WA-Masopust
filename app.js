@@ -3,6 +3,8 @@ $(document).ready(function () {
     const username = "coffe";
     const password = "kafe";
 
+
+    
     function sendRequest(endpoint, data, method, callback) {
         $.ajax({
             url: `${url}?cmd=${endpoint}`,
@@ -71,15 +73,16 @@ $(document).ready(function () {
 
         sendRequest('saveDrinks', formData, 'POST', function (response) {
             if (response.msg === -1) {
-                alert('error', 'Chyba při odesílání dat.');
+                alert('Chyba při odesílání dat', 'Chyba při odesílání dat.');
             } else if (response.msg === 1) { 
-                alert('success', 'Úspěšně odesláno!');
+                alert('Úspěšně odesláno!', 'Úspěšně odesláno!');
             } else {
-                alert('error', 'Neznámá odpověď ze serveru.');
+                alert('Neznámá odpověď ze serveru.', 'Neznámá odpověď ze serveru.');
             }
         });
     });
 
+    
 
     $('#toggleResults').on('click', function () {
         let resultsDiv = $('#results');
